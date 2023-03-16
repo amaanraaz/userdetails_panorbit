@@ -1,20 +1,6 @@
-import { useEffect, useState } from "react";
 import User from "./User";
 
 const HomePage = ()=>{
-    const[user,setUser] = useState([]);
-
-    useEffect(()=>{
-        getUser();
-    },[])
-
-    async function getUser(){
-        const data = await fetch("https://panorbit.in/api/users.json");
-        const json = await data.json();
-        // console.log(json);
-        setUser(json.users);
-    }
-
     return(
         <div>
             <div className="absolute w-full">
@@ -25,8 +11,8 @@ const HomePage = ()=>{
             <div className="bg-slate-200 h-24 w-[30rem] mx-[70vh] my-24 absolute rounded-3xl">
                 <div className="text-center p-2 text-2xl font-bold font-serif text-gray-500 shadow-lg">Select an account</div>
                 <div className="overflow-y-scroll h-[28rem] bg-slate-200 bottom-20 p-7 rounded-3xl">
-                    {
-                        <User users={user} />
+                    {                                   
+                        <User />
                     }
                 </div>
                     
