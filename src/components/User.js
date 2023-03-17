@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useAPI } from "../utils/userContext";
 
 const User = ()=>{
+    // user details
     const {users} = useAPI();
     return(
         <>

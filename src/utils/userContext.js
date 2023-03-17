@@ -1,7 +1,11 @@
+//creating a context to fetch data from given api
+
 import React, { useContext, useState, useEffect, createContext } from "react";
 
+//creating a context
 const APIContext = createContext();
 
+//creating the provider
 export function APIContextProvider({ children }) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -25,6 +29,7 @@ export function APIContextProvider({ children }) {
   );
 }
 
+// creating function that can be used to interact with context by provider comps
 export function useAPI() {
   const context = useContext(APIContext);
   if (context === undefined) {
